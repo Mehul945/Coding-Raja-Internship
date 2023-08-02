@@ -1,0 +1,330 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+:root{
+    --bg-color:#e9e8e8;
+    --font-color:black;
+    --primary:blue;
+    --py:2em;
+    --px:4em;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: var(--bg-color);
+    font-family: 'Roboto', sans-serif;
+    margin: 0 auto;
+    padding: var(--py) var(--px);
+}
+
+a{
+    text-decoration: none;
+    color: var(--font-color);
+}
+
+/* h1,h2,h3,h4,h5,h6{
+    margin: 0;
+    padding: 0;
+} */
+.checked {
+    color: blue;
+}
+
+.flex{
+    display: flex;
+}
+.flex-col{
+    flex-direction: column;
+}
+.flex-row{
+    flex-direction: row;
+}
+.space-around{
+    justify-content: space-around;
+}
+
+.gap-1{
+    gap: 1em;
+}
+.gap-2{
+    gap: 2em;
+}
+.gap-3{
+    gap: 3em;
+}
+.gap-4{
+    gap: 4em;
+}
+.margin-auto{
+    margin: auto;
+}
+.space-between{
+    justify-content: space-between;
+}
+.justify-center{
+    justify-content: center;
+}
+.align-center{
+    align-items: center;
+}
+
+.padding-inline-8{
+    padding-inline: 8em;
+}
+.padding-block-1{
+    padding-block: 1em;
+}
+
+.py-2{
+    padding-block: 2em;
+}
+.py-1{
+    padding-block: 1em;
+}
+
+.px-2{
+    padding-inline: 2em;
+}
+.px-1{
+    padding-inline: 1em;
+}
+.border-md{
+    border-radius: 10px;
+}
+
+.bg-primary{
+    background-color: var(--primary);
+}
+
+.text-white{
+    color: white;
+}
+
+.active{
+    background-color: var(--primary);
+    color: white;
+}
+.active-link{
+    color: var(--primary);
+}
+
+.h-full{
+    height: 100vh;
+}
+.w-full{
+    width: 100%;
+}
+
+
+.color-burn{
+    object-fit: contain;
+    mix-blend-mode: color-burn;
+}
+
+.mt-2{
+    margin-top: 2em;
+}
+.mb-1{
+    margin-bottom: 1em;
+}
+.mt-6{
+    margin-top: 6em;
+}
+
+.mx-2{
+    margin-inline-end:2em;
+}
+
+.large{
+    font-size: 4rem;
+}
+.large2x{
+    font-size: 2rem;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.h-fit{
+    height: fit-content;
+}
+
+
+.outline{
+    outline: 1px black solid;
+}
+
+.h-inherit{
+    height: inherit;
+}
+
+
+
+.card{
+    width: 12rem;
+    background-color: white;
+    border-radius: 10px;
+    padding: 1em;
+    text-align: center;
+}
+
+.align-icenter{
+    align-items: center;
+}
+
+.flex-wrap{
+    flex-wrap: wrap;
+}
+
+.mx-auto{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.space-nowrap{
+    white-space: nowrap;
+}
+
+main{
+    margin-inline: auto;
+    max-width: 100%;
+}
+.d-none{
+    display: none;
+}
+
+.grid{
+    display: grid;
+    place-items: center;
+}
+
+.flex-grow-1{
+    flex-grow: 1;
+}
+.md-gap-4{
+    gap: 4em;
+}
+.my-auto{
+    margin-inline: auto;
+}
+.w-80{
+    width: 80%;
+}
+
+
+.line{
+    width: 40px;
+    background-color: black;
+    padding-block: 0.1px;
+    margin-block:5px;
+}
+
+.show{
+    top: 0;
+    display: flex;
+}
+.hide{
+    top: -100%;
+    display: none;
+}
+#cross{
+    padding: 1em;
+    right: 1rem;
+    top: 1rem;
+}
+
+
+.cross1{
+    padding-block: 1px;
+    width: 2rem;
+    background-color: white;
+    transform:rotate(45deg)
+}
+.cross2{
+    padding-block: 1px;
+    width: 2rem;
+    background-color: white;
+    transform:rotate(135deg)
+}
+
+.flex-end{
+    justify-content: flex-end;
+}
+
+
+.navbar{
+    height: 100dvh;
+    background-color: rgba(0, 0, 0, 0.938);
+    position: fixed;
+    inset: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 300ms ease-in-out;
+}
+
+
+
+@media screen and (width<=425px){
+    :root{
+        --px: 1em;
+    }
+    .md-gap0{
+        gap: 0;
+    }
+    .md-text-center{
+        text-align: center;
+    }
+    .large{
+        font-size: xx-large;
+    }   
+    .md-flex{
+        flex-direction: column;
+    }
+    .o1{
+        order: 1;
+    }
+    .o2{
+        order: 2;
+    }
+    .md-w{
+        width: 320px;
+    }
+    .gap-4{
+        gap: 8em;
+    }
+    .md-none{
+        display: none;
+    }
+    .md-nav{
+        position: absolute;
+        width: fit-content;
+        inset-block: 0;
+        right: 0;
+        background-color: rgba(0, 255, 255, 0.562);
+        
+    }
+    .md-align-center{
+        align-items: start;
+    }
+    .line{
+        width: 40px;
+        background-color: black;
+        padding-block: 0.1px;
+        margin-block:5px;
+    }
+    .d-none{
+        display: flex;
+    }
+    .md-flex-row{
+        flex-direction: row;
+        gap: 1em;
+    }
+    .md-gap-4{
+        gap: 1em;
+    }
+}
+
+

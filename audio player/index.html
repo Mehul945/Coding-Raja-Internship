@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./dist/output.css">
+    <title>Music Player</title>
+    <style>
+        :root {
+            --bg-color: #121212
+        }
+    </style>
+</head>
+
+<body class="bg-[var(--bg-color)] text-white">
+    <header class="sticky p-3 top-0 bg-black">
+        <div class="flex justify-between">
+            <div class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" height="1.8em" viewBox="0 0 512 512">
+                    <style>
+                        svg {
+                            fill: #ffffff
+                        }
+                    </style>
+                    <path
+                        d="M494.8 47c12.7-3.7 20-17.1 16.3-29.8S494-2.8 481.2 1L51.7 126.9c-9.4 2.7-17.9 7.3-25.1 13.2C10.5 151.7 0 170.6 0 192v4V304 448c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V192c0-35.3-28.7-64-64-64H218.5L494.8 47zM368 240a80 80 0 1 1 0 160 80 80 0 1 1 0-160zM80 256c0-8.8 7.2-16 16-16h96c8.8 0 16 7.2 16 16s-7.2 16-16 16H96c-8.8 0-16-7.2-16-16zM64 320c0-8.8 7.2-16 16-16H208c8.8 0 16 7.2 16 16s-7.2 16-16 16H80c-8.8 0-16-7.2-16-16zm16 64c0-8.8 7.2-16 16-16h96c8.8 0 16 7.2 16 16s-7.2 16-16 16H96c-8.8 0-16-7.2-16-16z" />
+                </svg>
+            </div>
+            <input type="search" class="search hidden px-2 rounded-lg text-black outline-transparent">
+            <div class="flex gap-4">
+                <div class="search-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1.4em"
+                        viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                        <style>
+                            svg {
+                                fill: #ffffff
+                            }
+                        </style>
+                        <path
+                            d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+                    </svg>
+                </div>
+                <div class="bars">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1.4em"
+                        viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                        <style>
+                            svg {
+                                fill: #ffffff
+                            }
+                        </style>
+                        <path
+                            d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" />
+                    </svg>
+                </div>
+            </div>
+
+        </div>
+        <div class="menu hidden h-screen inset-0 absolute bg-[var(--bg-color)] translate-x-full transition-all duration-300">
+            <div class="cross right-1 top-1 hover:cursor-pointer absolute">
+                <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#ffffff}</style><path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c-9.4 9.4-9.4 24.6 0 33.9l47 47-47 47c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l47-47 47 47c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-47-47 47-47c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-47 47-47-47c-9.4-9.4-24.6-9.4-33.9 0z"/></svg>
+            </div>
+            <div class="items flex flex-col font-bold text-xl gap-4 absolute top-16 left-8">
+                <a href="#">Log in</a>
+                <a href="#">Sign Up</a>
+                <a href="#">_</a>
+                <a href="#">Premium</a>
+                <a href="#">Help</a>
+                <a href="#">Download</a>
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+            </div>
+        </div>
+
+    </header>
+
+    <main class="mt-6 ml-3 mr-3 bg-[var(--bg-color)]">
+        <div class="fuetures">
+            <h3 class="font-bold text-lg mb-2">Focus</h3>
+            <div class="cards overflow-x-scroll hide-scrollbar flex gap-2" >
+                <a href="#" class="flex-shrink-0 shadow-lg">
+                    <div class="card">
+                        <figure>
+                            <img class="rounded-md w-[152px] h-auto " src="./dist/img/peace full peano.jfif" alt="">
+                            <figcaption class="font-semibold" >Peacefull Piano</figcaption>
+                        </figure>
+                    </div>
+                </a>
+                <a href="#" class="flex-shrink-0">
+                    <div class="card">
+                        <figure>
+                            <img class="rounded-md w-[152px] h-auto" src="./dist/img/peace full peano.jfif" alt="">
+                            <figcaption class="font-semibold" >Peacefull Piano</figcaption>
+                        </figure>
+                    </div>
+                </a>
+                <a href="#" class="flex-shrink-0">
+                    <div class="card">
+                        <figure>
+                            <img class="rounded-md w-[152px] h-auto" src="./dist/img/peace full peano.jfif" alt="">
+                            <figcaption class="font-semibold" >Peacefull Piano</figcaption>
+                        </figure>
+                    </div>
+                </a>
+                <a href="#" class="flex-shrink-0">
+                    <div class="card">
+                        <figure>
+                            <img class="rounded-md w-[152px] h-auto" src="./dist/img/peace full peano.jfif" alt="">
+                            <figcaption class="font-semibold" >Peacefull Piano</figcaption>
+                        </figure>
+                    </div>
+                </a>
+            </div>
+
+            <h3 class="font-bold text-lg mb-2">Focus</h3>
+            <div class="cards overflow-x-scroll hide-scrollbar flex gap-2" >
+                <a href="#" class="flex-shrink-0 shadow-lg">
+                    <div class="card">
+                        <figure>
+                            <img class="rounded-md w-[152px] h-auto " src="./dist/img/peace full peano.jfif" alt="">
+                            <figcaption class="font-semibold" >Peacefull Piano</figcaption>
+                        </figure>
+                    </div>
+                </a>
+                <a href="#" class="flex-shrink-0">
+                    <div class="card">
+                        <figure>
+                            <img class="rounded-md w-[152px] h-auto" src="./dist/img/peace full peano.jfif" alt="">
+                            <figcaption class="font-semibold" >Peacefull Piano</figcaption>
+                        </figure>
+                    </div>
+                </a>
+                <a href="#" class="flex-shrink-0">
+                    <div class="card">
+                        <figure>
+                            <img class="rounded-md w-[152px] h-auto" src="./dist/img/peace full peano.jfif" alt="">
+                            <figcaption class="font-semibold" >Peacefull Piano</figcaption>
+                        </figure>
+                    </div>
+                </a>
+                <a href="#" class="flex-shrink-0">
+                    <div class="card">
+                        <figure>
+                            <img class="rounded-md w-[152px] h-auto" src="./dist/img/peace full peano.jfif" alt="">
+                            <figcaption class="font-semibold" >Peacefull Piano</figcaption>
+                        </figure>
+                    </div>
+                </a>
+            </div>
+
+            <h3 class="font-bold text-lg mb-2">Focus</h3>
+            <div class="cards overflow-x-scroll hide-scrollbar flex gap-2" >
+                <a href="#" class="flex-shrink-0 shadow-lg">
+                    <div class="card">
+                        <figure>
+                            <img class="rounded-md w-[152px] h-auto " src="./dist/img/peace full peano.jfif" alt="">
+                            <figcaption class="font-semibold" >Peacefull Piano</figcaption>
+                        </figure>
+                    </div>
+                </a>
+                <a href="#" class="flex-shrink-0">
+                    <div class="card">
+                        <figure>
+                            <img class="rounded-md w-[152px] h-auto" src="./dist/img/peace full peano.jfif" alt="">
+                            <figcaption class="font-semibold" >Peacefull Piano</figcaption>
+                        </figure>
+                    </div>
+                </a>
+                <a href="#" class="flex-shrink-0">
+                    <div class="card">
+                        <figure>
+                            <img class="rounded-md w-[152px] h-auto" src="./dist/img/peace full peano.jfif" alt="">
+                            <figcaption class="font-semibold" >Peacefull Piano</figcaption>
+                        </figure>
+                    </div>
+                </a>
+                <a href="#" class="flex-shrink-0">
+                    <div class="card">
+                        <figure>
+                            <img class="rounded-md w-[152px] h-auto" src="./dist/img/peace full peano.jfif" alt="">
+                            <figcaption class="font-semibold" >Peacefull Piano</figcaption>
+                        </figure>
+                    </div>
+                </a>
+            </div>
+
+
+        </div>
+    </main>
+
+    <footer class="footer m-4">
+        <div>
+            <h3 class="mb-3 font-medium">Company</h3>
+            <div class="flex flex-col gap-1 text-gray-400 ">
+                <a href="#">About</a>
+                <a href="#">Artists</a>
+                <a href="#">Jobs</a>
+                <a href="#">Contact Up</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector(".bars").addEventListener("click",(e)=>{
+            const menu=document.querySelector(".menu")
+            if(menu.classList.contains("translate-x-full")){
+                menu.classList.remove('hidden')
+                menu.classList.remove('translate-x-full')
+                menu.classList.add('translate-x-0')
+            }
+        })
+        document.querySelector(".cross").addEventListener("click",(e)=>{
+            const menu=document.querySelector(".menu")
+            menu.classList.add('translate-x-full')
+            menu.classList.add('hidden')
+            menu.classList.remove('translate-x-0')
+        })
+
+        document.querySelector(".search-icon").addEventListener('click',(e)=>{
+            const search=document.querySelector(".search")
+            if(search.classList.contains("hidden")){
+                search.classList.remove("hidden")
+                search.focus()
+            }else{
+                search.classList.add("hidden")
+            }
+        })
+
+        document.querySelector(".search").addEventListener("blur",(e)=>{
+            document.querySelector(".search").classList.add("hidden")
+        })
+    </script>
+
+
+</body>
+
+
+
+</html>

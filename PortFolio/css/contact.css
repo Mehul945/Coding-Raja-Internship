@@ -1,0 +1,42 @@
+
+:root{
+    --bg-color:#e9e8e8;
+    --font-color:black;
+    --primary:blue;
+    --py:2em;
+    --px:4em;
+}
+.input{
+    outline: none;
+}
+.py-1{
+    padding-block: 1em;
+}
+.border-none{
+    border: none;
+}
+
+.w-18{
+    width: 18em;
+}
+
+.outline-none{
+    outline: none;
+}
+
+
+.absolute{
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+}
+
+.primary{
+    color: var(--primary);
+}
+
+@media screen and (width<=425px){
+    :root{
+        --px: 1em;
+    }
+}

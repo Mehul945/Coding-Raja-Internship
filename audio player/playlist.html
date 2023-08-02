@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./dist/output.css">
+    <title>Music Player</title>
+    <style>
+        :root {
+            --bg-color: #121212;
+        }
+    </style>
+</head>
+
+<body class="bg-[var(--bg-color)] text-white">
+    <header class="sticky p-3 top-0 bg-black">
+        <div class="flex justify-between">
+            <div class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" height="1.8em" viewBox="0 0 512 512">
+                    <style>
+                        svg {
+                            fill: #ffffff
+                        }
+                    </style>
+                    <path
+                        d="M494.8 47c12.7-3.7 20-17.1 16.3-29.8S494-2.8 481.2 1L51.7 126.9c-9.4 2.7-17.9 7.3-25.1 13.2C10.5 151.7 0 170.6 0 192v4V304 448c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V192c0-35.3-28.7-64-64-64H218.5L494.8 47zM368 240a80 80 0 1 1 0 160 80 80 0 1 1 0-160zM80 256c0-8.8 7.2-16 16-16h96c8.8 0 16 7.2 16 16s-7.2 16-16 16H96c-8.8 0-16-7.2-16-16zM64 320c0-8.8 7.2-16 16-16H208c8.8 0 16 7.2 16 16s-7.2 16-16 16H80c-8.8 0-16-7.2-16-16zm16 64c0-8.8 7.2-16 16-16h96c8.8 0 16 7.2 16 16s-7.2 16-16 16H96c-8.8 0-16-7.2-16-16z" />
+                </svg>
+            </div>
+            <input type="search" class="search hidden px-2 rounded-lg text-black outline-transparent">
+            <div class="flex gap-4">
+                <div class="search-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1.4em"
+                        viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                        <style>
+                            svg {
+                                fill: #ffffff
+                            }
+                        </style>
+                        <path
+                            d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+                    </svg>
+                </div>
+                <div class="bars">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1.4em"
+                        viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                        <style>
+                            svg {
+                                fill: #ffffff
+                            }
+                        </style>
+                        <path
+                            d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" />
+                    </svg>
+                </div>
+            </div>
+
+        </div>
+        <div
+            class="menu hidden h-screen inset-0 absolute bg-[var(--bg-color)] translate-x-full transition-all duration-300">
+            <div class="cross right-1 top-1 hover:cursor-pointer absolute">
+                <svg xmlns="http://www.w3.org/2000/svg" height="2em"
+                    viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                    <style>
+                        svg {
+                            fill: #ffffff
+                        }
+                    </style>
+                    <path
+                        d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c-9.4 9.4-9.4 24.6 0 33.9l47 47-47 47c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l47-47 47 47c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-47-47 47-47c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-47 47-47-47c-9.4-9.4-24.6-9.4-33.9 0z" />
+                </svg>
+            </div>
+            <div class="items flex flex-col font-bold text-xl gap-4 absolute top-16 left-8">
+                <a href="#">Log in</a>
+                <a href="#">Sign Up</a>
+                <a href="#">_</a>
+                <a href="#">Premium</a>
+                <a href="#">Help</a>
+                <a href="#">Download</a>
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+            </div>
+        </div>
+
+    </header>
+
+    <main class="min-h-screen">
+        <div class="bg-gradient p-4">
+            <div class="song w-full shadow-slate-600">
+                <img class="w-[152px] h-auto mx-auto box-shadow" src="./dist/img/peace full peano.jfif" alt="">
+            </div>
+            <div class="content mx-4 mt-6 ">
+                <h2 class="font-bold text-3xl">Peaceful Piano</h2>
+                <p>Peaceful piano to help you slow down, breathe, and relax.</p>
+                <p><span>10M Likes</span> <span>&odot;</span> <span>1 hour 30 min</span></p>
+            </div>
+            <div class="icons mt-4">
+                <div class="icons flex justify-between">
+                    <div class="flex justify-between">
+                        <div class="flex gap-4">
+                            <svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="30"
+                                viewBox="0 -960 960 960">
+                                <path
+                                    d="m480-121-41-37q-105.768-97.121-174.884-167.561Q195-396 154-451.5T96.5-552Q80-597 80-643q0-90.155 60.5-150.577Q201-854 290-854q57 0 105.5 27t84.5 78q42-54 89-79.5T670-854q89 0 149.5 60.423Q880-733.155 880-643q0 46-16.5 91T806-451.5Q765-396 695.884-325.561 626.768-255.121 521-158l-41 37Zm0-79q101.236-92.995 166.618-159.498Q712-426 750.5-476t54-89.135q15.5-39.136 15.5-77.72Q820-709 778-751.5T670.225-794q-51.524 0-95.375 31.5Q531-731 504-674h-49q-26-56-69.85-88-43.851-32-95.375-32Q224-794 182-751.5t-42 108.816Q140-604 155.5-564.5t54 90Q248-424 314-358t166 158Zm0-297Z" />
+                            </svg>
+                            <svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="30"
+                                viewBox="0 -960 960 960">
+                                <path
+                                    d="M727-80q-47.5 0-80.75-33.346Q613-146.693 613-194.331q0-6.669 1.5-16.312T619-228L316-404q-15 17-37 27.5T234-366q-47.5 0-80.75-33.25T120-480q0-47.5 33.25-80.75T234-594q23 0 44 9t38 26l303-174q-3-7.071-4.5-15.911Q613-757.75 613-766q0-47.5 33.25-80.75T727-880q47.5 0 80.75 33.25T841-766q0 47.5-33.25 80.75T727-652q-23.354 0-44.677-7.5T646-684L343-516q2 8 3.5 18.5t1.5 17.741q0 7.242-1.5 15Q345-457 343-449l303 172q15-14 35-22.5t46-8.5q47.5 0 80.75 33.25T841-194q0 47.5-33.25 80.75T727-80Zm.035-632Q750-712 765.5-727.535q15.5-15.535 15.5-38.5T765.465-804.5q-15.535-15.5-38.5-15.5T688.5-804.465q-15.5 15.535-15.5 38.5t15.535 38.465q15.535 15.5 38.5 15.5Zm-493 286Q257-426 272.5-441.535q15.5-15.535 15.5-38.5T272.465-518.5q-15.535-15.5-38.5-15.5T195.5-518.465q-15.5 15.535-15.5 38.5t15.535 38.465q15.535 15.5 38.5 15.5Zm493 286Q750-140 765.5-155.535q15.5-15.535 15.5-38.5T765.465-232.5q-15.535-15.5-38.5-15.5T688.5-232.465q-15.5 15.535-15.5 38.5t15.535 38.465q15.535 15.5 38.5 15.5ZM727-766ZM234-480Zm493 286Z" />
+                            </svg>
+                            <svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="30"
+                                viewBox="0 -960 960 960">
+                                <path
+                                    d="M479.858-160Q460-160 446-174.142q-14-14.141-14-34Q432-228 446.142-242q14.141-14 34-14Q500-256 514-241.858q14 14.141 14 34Q528-188 513.858-174q-14.141 14-34 14Zm0-272Q460-432 446-446.142q-14-14.141-14-34Q432-500 446.142-514q14.141-14 34-14Q500-528 514-513.858q14 14.141 14 34Q528-460 513.858-446q-14.141 14-34 14Zm0-272Q460-704 446-718.142q-14-14.141-14-34Q432-772 446.142-786q14.141-14 34-14Q500-800 514-785.858q14 14.141 14 34Q528-732 513.858-718q-14.141 14-34 14Z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div>
+                        <svg class="fill-green-700 cursor-pointer" xmlns="http://www.w3.org/2000/svg" height="48"
+                            viewBox="0 -960 960 960" width="48">
+                            <path
+                                d="m383-310 267-170-267-170v340Zm97 230q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 31.5-156t86-127Q252-817 325-848.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 82-31.5 155T763-197.5q-54 54.5-127 86T480-80Zm0-60q142 0 241-99.5T820-480q0-142-99-241t-241-99q-141 0-240.5 99T140-480q0 141 99.5 240.5T480-140Zm0-340Z" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="playlist mx-4">
+            <ol class="song list-decimal list-outside mx-4">
+                <li>
+                    <div class="flex justify-between ">
+                        <div>
+                            <p class="font-semibold text-lg text-ellipsis">Lorem ipsum dolor sit amet.</p>
+                            <p class="text-sm text-gray-400">Artist</p>
+                        </div>
+                        <svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="30"
+                            viewBox="0 -960 960 960">
+                            <path
+                                d="M479.858-160Q460-160 446-174.142q-14-14.141-14-34Q432-228 446.142-242q14.141-14 34-14Q500-256 514-241.858q14 14.141 14 34Q528-188 513.858-174q-14.141 14-34 14Zm0-272Q460-432 446-446.142q-14-14.141-14-34Q432-500 446.142-514q14.141-14 34-14Q500-528 514-513.858q14 14.141 14 34Q528-460 513.858-446q-14.141 14-34 14Zm0-272Q460-704 446-718.142q-14-14.141-14-34Q432-772 446.142-786q14.141-14 34-14Q500-800 514-785.858q14 14.141 14 34Q528-732 513.858-718q-14.141 14-34 14Z" />
+                        </svg>
+                    </div>
+                </li>
+                <li>
+                    <div class="flex justify-between ">
+                        <div>
+                            <p class="font-semibold text-lg text-ellipsis">Lorem ipsum dolor sit amet.</p>
+                            <p class="text-sm text-gray-400">Artist</p>
+                        </div>
+                        <svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="30"
+                            viewBox="0 -960 960 960">
+                            <path
+                                d="M479.858-160Q460-160 446-174.142q-14-14.141-14-34Q432-228 446.142-242q14.141-14 34-14Q500-256 514-241.858q14 14.141 14 34Q528-188 513.858-174q-14.141 14-34 14Zm0-272Q460-432 446-446.142q-14-14.141-14-34Q432-500 446.142-514q14.141-14 34-14Q500-528 514-513.858q14 14.141 14 34Q528-460 513.858-446q-14.141 14-34 14Zm0-272Q460-704 446-718.142q-14-14.141-14-34Q432-772 446.142-786q14.141-14 34-14Q500-800 514-785.858q14 14.141 14 34Q528-732 513.858-718q-14.141 14-34 14Z" />
+                        </svg>
+                    </div>
+                </li>
+                <li>
+                    <div class="flex justify-between ">
+                        <div>
+                            <p class="font-semibold text-lg text-ellipsis">Lorem ipsum dolor sit amet.</p>
+                            <p class="text-sm text-gray-400">Artist</p>
+                        </div>
+                        <svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="30"
+                            viewBox="0 -960 960 960">
+                            <path
+                                d="M479.858-160Q460-160 446-174.142q-14-14.141-14-34Q432-228 446.142-242q14.141-14 34-14Q500-256 514-241.858q14 14.141 14 34Q528-188 513.858-174q-14.141 14-34 14Zm0-272Q460-432 446-446.142q-14-14.141-14-34Q432-500 446.142-514q14.141-14 34-14Q500-528 514-513.858q14 14.141 14 34Q528-460 513.858-446q-14.141 14-34 14Zm0-272Q460-704 446-718.142q-14-14.141-14-34Q432-772 446.142-786q14.141-14 34-14Q500-800 514-785.858q14 14.141 14 34Q528-732 513.858-718q-14.141 14-34 14Z" />
+                        </svg>
+                    </div>
+                </li>
+                <li>
+                    <div class="flex justify-between ">
+                        <div>
+                            <p class="font-semibold text-lg text-ellipsis">Lorem ipsum dolor sit amet.</p>
+                            <p class="text-sm text-gray-400">Artist</p>
+                        </div>
+                        <svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="30"
+                            viewBox="0 -960 960 960">
+                            <path
+                                d="M479.858-160Q460-160 446-174.142q-14-14.141-14-34Q432-228 446.142-242q14.141-14 34-14Q500-256 514-241.858q14 14.141 14 34Q528-188 513.858-174q-14.141 14-34 14Zm0-272Q460-432 446-446.142q-14-14.141-14-34Q432-500 446.142-514q14.141-14 34-14Q500-528 514-513.858q14 14.141 14 34Q528-460 513.858-446q-14.141 14-34 14Zm0-272Q460-704 446-718.142q-14-14.141-14-34Q432-772 446.142-786q14.141-14 34-14Q500-800 514-785.858q14 14.141 14 34Q528-732 513.858-718q-14.141 14-34 14Z" />
+                        </svg>
+                    </div>
+                </li>
+                <li>
+                    <div class="flex justify-between ">
+                        <div>
+                            <p class="font-semibold text-lg text-ellipsis">Lorem ipsum dolor sit amet.</p>
+                            <p class="text-sm text-gray-400">Artist</p>
+                        </div>
+                        <svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="30"
+                            viewBox="0 -960 960 960">
+                            <path
+                                d="M479.858-160Q460-160 446-174.142q-14-14.141-14-34Q432-228 446.142-242q14.141-14 34-14Q500-256 514-241.858q14 14.141 14 34Q528-188 513.858-174q-14.141 14-34 14Zm0-272Q460-432 446-446.142q-14-14.141-14-34Q432-500 446.142-514q14.141-14 34-14Q500-528 514-513.858q14 14.141 14 34Q528-460 513.858-446q-14.141 14-34 14Zm0-272Q460-704 446-718.142q-14-14.141-14-34Q432-772 446.142-786q14.141-14 34-14Q500-800 514-785.858q14 14.141 14 34Q528-732 513.858-718q-14.141 14-34 14Z" />
+                        </svg>
+                    </div>
+                </li>
+                <li>
+                    <div class="flex justify-between ">
+                        <div>
+                            <p class="font-semibold text-lg text-ellipsis">Lorem ipsum dolor sit amet.</p>
+                            <p class="text-sm text-gray-400">Artist</p>
+                        </div>
+                        <svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="30"
+                            viewBox="0 -960 960 960">
+                            <path
+                                d="M479.858-160Q460-160 446-174.142q-14-14.141-14-34Q432-228 446.142-242q14.141-14 34-14Q500-256 514-241.858q14 14.141 14 34Q528-188 513.858-174q-14.141 14-34 14Zm0-272Q460-432 446-446.142q-14-14.141-14-34Q432-500 446.142-514q14.141-14 34-14Q500-528 514-513.858q14 14.141 14 34Q528-460 513.858-446q-14.141 14-34 14Zm0-272Q460-704 446-718.142q-14-14.141-14-34Q432-772 446.142-786q14.141-14 34-14Q500-800 514-785.858q14 14.141 14 34Q528-732 513.858-718q-14.141 14-34 14Z" />
+                        </svg>
+                    </div>
+                </li>
+                <li>
+                    <div class="flex justify-between ">
+                        <div>
+                            <p class="font-semibold text-lg text-ellipsis">Lorem ipsum dolor sit amet.</p>
+                            <p class="text-sm text-gray-400">Artist</p>
+                        </div>
+                        <svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="30"
+                            viewBox="0 -960 960 960">
+                            <path
+                                d="M479.858-160Q460-160 446-174.142q-14-14.141-14-34Q432-228 446.142-242q14.141-14 34-14Q500-256 514-241.858q14 14.141 14 34Q528-188 513.858-174q-14.141 14-34 14Zm0-272Q460-432 446-446.142q-14-14.141-14-34Q432-500 446.142-514q14.141-14 34-14Q500-528 514-513.858q14 14.141 14 34Q528-460 513.858-446q-14.141 14-34 14Zm0-272Q460-704 446-718.142q-14-14.141-14-34Q432-772 446.142-786q14.141-14 34-14Q500-800 514-785.858q14 14.141 14 34Q528-732 513.858-718q-14.141 14-34 14Z" />
+                        </svg>
+                    </div>
+                </li>
+                <li>
+                    <div class="flex justify-between ">
+                        <div>
+                            <p class="font-semibold text-lg text-ellipsis">Lorem ipsum dolor sit amet.</p>
+                            <p class="text-sm text-gray-400">Artist</p>
+                        </div>
+                        <svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="30"
+                            viewBox="0 -960 960 960">
+                            <path
+                                d="M479.858-160Q460-160 446-174.142q-14-14.141-14-34Q432-228 446.142-242q14.141-14 34-14Q500-256 514-241.858q14 14.141 14 34Q528-188 513.858-174q-14.141 14-34 14Zm0-272Q460-432 446-446.142q-14-14.141-14-34Q432-500 446.142-514q14.141-14 34-14Q500-528 514-513.858q14 14.141 14 34Q528-460 513.858-446q-14.141 14-34 14Zm0-272Q460-704 446-718.142q-14-14.141-14-34Q432-772 446.142-786q14.141-14 34-14Q500-800 514-785.858q14 14.141 14 34Q528-732 513.858-718q-14.141 14-34 14Z" />
+                        </svg>
+                    </div>
+                </li>
+                <li>
+                    <div class="flex justify-between ">
+                        <div>
+                            <p class="font-semibold text-lg text-ellipsis">Lorem ipsum dolor sit amet.</p>
+                            <p class="text-sm text-gray-400">Artist</p>
+                        </div>
+                        <svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="30"
+                            viewBox="0 -960 960 960">
+                            <path
+                                d="M479.858-160Q460-160 446-174.142q-14-14.141-14-34Q432-228 446.142-242q14.141-14 34-14Q500-256 514-241.858q14 14.141 14 34Q528-188 513.858-174q-14.141 14-34 14Zm0-272Q460-432 446-446.142q-14-14.141-14-34Q432-500 446.142-514q14.141-14 34-14Q500-528 514-513.858q14 14.141 14 34Q528-460 513.858-446q-14.141 14-34 14Zm0-272Q460-704 446-718.142q-14-14.141-14-34Q432-772 446.142-786q14.141-14 34-14Q500-800 514-785.858q14 14.141 14 34Q528-732 513.858-718q-14.141 14-34 14Z" />
+                        </svg>
+                    </div>
+                </li>
+                
+            </ol>
+        </div>
+
+    </main>
+
+    
+    <footer class="my-4 bg-gray-950 px-4">
+        <div>
+            <h3 class="mb-3 font-medium">Company</h3>
+            <div class="flex flex-col md:flex-row gap-1 md:gap-4  ">
+                <a href="#">About</a>
+                <a href="#">Artists</a>
+                <a href="#">Jobs</a>
+                <a href="#">Contact Up</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector(".bars").addEventListener("click", (e) => {
+            const menu = document.querySelector(".menu")
+            if (menu.classList.contains("translate-x-full")) {
+                menu.classList.remove('hidden')
+                menu.classList.remove('translate-x-full')
+                menu.classList.add('translate-x-0')
+            }
+        })
+        document.querySelector(".cross").addEventListener("click", (e) => {
+            const menu = document.querySelector(".menu")
+            menu.classList.add('translate-x-full')
+            menu.classList.add('hidden')
+            menu.classList.remove('translate-x-0')
+        })
+
+        document.querySelector(".search-icon").addEventListener('click', (e) => {
+            const search = document.querySelector(".search")
+            if (search.classList.contains("hidden")) {
+                search.classList.remove("hidden")
+                search.focus()
+            } else {
+                search.classList.add("hidden")
+            }
+        })
+
+        document.querySelector(".search").addEventListener("blur", (e) => {
+            document.querySelector(".search").classList.add("hidden")
+        })
+    </script>
+
+
+</body>
+
+
+
+</html>

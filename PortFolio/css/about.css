@@ -1,0 +1,40 @@
+:root{
+    --bg-color:#e9e8e8;
+    --font-color:black;
+    --primary:blue;
+    --py:2em;
+    --px:4em;
+}
+
+main{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.primary{
+    color: var(--primary);
+}
+
+.my-1{
+    margin-block: 1em;
+}
+.mt-1{
+    margin-top: 1em;
+}
+
+#freelancing-experience {
+    border-radius: 5px;
+    /* font-family: Georgia, 'Times New Roman', Times, serif; */
+  }
+.experience{
+    line-height: 2;
+}
+.experience p{
+    line-height: 1.3;
+    margin-bottom: 12px;
+}
+
+@media screen and (width<=425px){
+    :root{
+        --px: 1em;
+    }
+}

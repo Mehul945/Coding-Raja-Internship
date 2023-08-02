@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities{
+    .hide-scrollbar::-webkit-scrollbar {
+        width: 0.1em;
+        }
+        
+        .hide-scrollbar::-webkit-scrollbar-track {
+        background-color: transparent;
+        }
+        
+        .hide-scrollbar::-webkit-scrollbar-thumb {
+        background-color: transparent;
+    }
+}
+
+@layer utilities{
+    .bg-gradient{
+        background: linear-gradient(0deg, rgb(18 18 18) 0%, rgba(80,119,118,1) 50%, rgba(0,212,255,1) 100%);
+    }
+
+    .bg-song-gradient{
+        background: rgb(26,26,51);
+        background: linear-gradient(173deg, rgba(26,26,51,1) 0%, rgba(13,13,26,1) 100%);
+    }
+
+    .box-shadow{
+        box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    }
+}
+
