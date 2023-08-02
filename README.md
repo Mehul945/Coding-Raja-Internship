@@ -33,7 +33,11 @@ The Music Player and Portfolio Website project is a web application that allows 
 
 ## Demo
 
-You can access a live demo of the project at [example.com](https://www.example.com).
+You can access a live demo of the project at 
+- [**Coding Raja Internship Audio Player**](https://mehul945.github.io/Coding-Raja-Internship/audio%20player/)
+
+- [**Coding Raja Internship Portfolio**](https://mehul945.github.io/Coding-Raja-Internship/PortFolio/)
+
 
 ## Installation
 
