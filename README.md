@@ -50,3 +50,9 @@ To run the project locally, follow these steps:
 - CSS3
 - JavaScript
 - Tailwind
+
+# LINKS
+- [**Coding Raja Internship Audio Player**](https://mehul945.github.io/Coding-Raja-Internship/audio%20player/)
+
+- [**Coding Raja Internship Portfolio**](https://mehul945.github.io/Coding-Raja-Internship/PortFolio/)
+
