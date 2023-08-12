@@ -34,9 +34,9 @@ The Music Player and Portfolio Website project is a web application that allows 
 ## Demo
 
 You can access a live demo of the project at 
-- [**Coding Raja Internship Audio Player**](https://mehul945.github.io/Coding-Raja-Internship/audio%20player/)
+- [**Audio Player**](https://mehul945.github.io/Frontend-Projects/audio%20player/)
 
-- [**Coding Raja Internship Portfolio**](https://mehul945.github.io/Coding-Raja-Internship/PortFolio/)
+- [**Portfolio**](https://mehul945.github.io/Frontend-Projects/PortFolio/)
 
 
 ## Installation
@@ -46,7 +46,7 @@ To run the project locally, follow these steps:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/Mehul945/Coding-Raja-Internship.git
+   git clone https://github.com/Mehul945/Frontend-Projects.git
    ```
 
 # Technologies Used
